@@ -207,7 +207,7 @@ extern "C" ASCII_CODE AST_ascii_code_array[];
 
 typedef struct _MATCH_ERROR{
     typedef enum _match_error_type{}match_error_type;
-    ast_match_error_type type;
+    match_error_type type;
     char* error;
 }MATCH_ERROR;
 
@@ -240,7 +240,7 @@ public:
     bool arabic(const wchar_t& value);
 public:
     virtual int loadMode(const wchar_t* mode, unsigned int& index, const unsigned int& size);
-    virtual int pushError(const AST_MATCH_ERROR& error);
+    virtual int pushError(const MATCH_ERROR& error);
 };
 
 class MatchSequence;
@@ -267,6 +267,6 @@ public:
     int makeMode(const char* mode, unsigned int& index, const unsigned int& size);
 public:
     virtual int loadMode(const wchar_t* mode, unsigned int& index,const unsigned int& size);
-    virtual int pushError(const AST_MATCH_ERROR& error);
+    virtual int pushError(const MATCH_ERROR& error);
 };
 #endif
